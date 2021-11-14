@@ -4,7 +4,7 @@ const { setMethod } = require("./setMethod");
 const { pipeline } = require("stream");
 
 const options = require("./getArg");
-const { rule, input, output } = options;
+const { input, output } = options;
 const readStream = input
   ? fs.createReadStream(path.join(__dirname, input))
   : process.stdin;
