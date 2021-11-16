@@ -1,7 +1,7 @@
 # Task1
 Чтобы запустить программу
 
-node index.js -c "{XY(-)}n" -i "{input file path}" -o "{output fi;e path"
+node index.js -c "{XY(-)}n" -i "{input file path}" -o "{output file path}"
 
 где XY
 
@@ -23,7 +23,6 @@ Y is flag of encoding or decoding (mandatory for Caesar cipher and ROT-8 cipher 
 
 Пример $ node index.js -c "C1-C1-R0-A" -i "./input.txt" -o "./output.txt"
 
-К сожалению перепутал ветки , поэтому в PR нет измененных файлов=(
 
 input.txt This is secret. Message about "" symbol!
 
