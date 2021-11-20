@@ -2,18 +2,18 @@
 const CustomError = require('./customError')
 const errorHeandler = require('./errorHeandler')
 
-const validationArg = function(arguments){
+const validationArg = function(arg){
     let counterI = 0;
     let counterO = 0;
     let counterC = 0;
-arguments.forEach((el) => {
+arg.forEach((el) => {
     if (el == '-c') counterC++;
     if (el == '-i') counterI++;
     if (el == '-o') counterO++;
 })
 try{
     if (counterC === 0) {
-        throw new CustomError('Error message is shown')
+        throw new CustomError('Error: no config')
     }
 if (counterC > 1) {
     throw new CustomError('Error: You provided -c argument more than once')

@@ -39,5 +39,5 @@ const cipher = (text, method, mode = ENCRYPTION) => {
 };
 
 module.exports = {
-  cipher,
+  cipher
 };

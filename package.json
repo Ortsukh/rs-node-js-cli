@@ -4,7 +4,8 @@
   "description": "Чтобы запустить программу",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test-cov":"jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/Ortsukh/rs-node-js-cli/issues"
   },
-  "homepage": "https://github.com/Ortsukh/rs-node-js-cli#readme"
+  "jest": {
+    "verbose": true,
+    "collectCoverageFrom" : ["**/*.js", "!**/node_modules/**",
+      "!**/vendor/**",
+      "!**/coverage/**"]
+  },
+  "homepage": "https://github.com/Ortsukh/rs-node-js-cli#readme",
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
 }

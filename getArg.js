@@ -2,11 +2,11 @@ const validationArg = require('./validationArg')
 const vakidationConfig = require('./vakidationConfig')
 const validationFiles = require('./validationFiles')
 
-const arguments = process.argv.slice(2);
+const arg = process.argv.slice(2);
 
-validationArg(arguments)
-const config = vakidationConfig(arguments)
-const {inputFile, outputFile} = validationFiles(arguments)
+validationArg(arg)
+const config = vakidationConfig(arg)
+const {inputFile, outputFile} = validationFiles(arg)
 
 const options = {
     rule: config,
