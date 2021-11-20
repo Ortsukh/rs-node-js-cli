@@ -1,7 +1,7 @@
 {
   "name": "rs-node-js-cli",
   "version": "1.0.0",
-  "description": "",
+  "description": "Чтобы запустить программу",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
