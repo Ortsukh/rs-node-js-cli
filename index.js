@@ -3,14 +3,15 @@ const path = require("path");
 const { setMethod } = require("./setMethod");
 const { pipeline } = require("stream");
 
-const options = require("./getArg");
-const { rule, input, output } = options;
+const getArg = require("./getArg");
+const { rule, input, output } = getArg();
+console.log(path.join(__dirname, input));
 const readStream = input
-  ? fs.createReadStream(path.join(__dirname, input))
+  ? fs.createReadStream(input)
   : process.stdin;
 
 const writeStream = output
-  ? fs.createWriteStream(path.join(__dirname, output), {
+  ? fs.createWriteStream( output, {
       flags: "a",
     })
   : process.stdout;

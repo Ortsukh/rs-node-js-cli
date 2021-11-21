@@ -5,7 +5,7 @@ describe('Validation arguments', function() {
     test('Check on error without -c argument',()=>{
         const mockExit = jest.spyOn(process, 'exit').mockImplementation(() => {});
         console.log = jest.fn();
-        const result = 'Error: no config'
+        const result = 'Error: No config'
         const arr = [ '-i', './input.txt', '-o', './output.txt', ]
         validationArg(arr)
 expect(console.log.mock.calls[0][0]).toBe(result)

@@ -1,5 +1,6 @@
 
 const fs = require("fs");
+const path = require("path");
 
 const CustomError = require('./customError')
 const errorHeandler = require('./errorHeandler')
@@ -10,12 +11,12 @@ const validationFiles = function(arg){
     let counterO = 0;
    
 arg.forEach((el) => {
-    if (el == '-i') counterI++;
-    if (el == '-o') counterO++;
+    if (el == '-i' || el == '--input') counterI++;
+    if (el == '-o' || el == '--output') counterO++;
 })
 
-const inputFile = arg.indexOf("-i") !== -1 ? arg[arg.indexOf("-i") + 1] : undefined;
-const outputFile = arg.indexOf("-o") !== -1 ? arg[arg.indexOf("-o") + 1] : undefined;
+const inputFile = path.join(__dirname, arg.indexOf("-i") !== -1 ? arg[arg.indexOf("-i") + 1] : undefined);
+const outputFile = path.join(__dirname,arg.indexOf("-o") !== -1 ? arg[arg.indexOf("-o") + 1] : undefined);
 
 const hasInputFile = fs.existsSync(inputFile)
 const hasOutputFile = fs.existsSync(outputFile)

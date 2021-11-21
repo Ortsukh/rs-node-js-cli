@@ -1,11 +1,11 @@
 const validationArg = require('./validationArg')
-const vakidationConfig = require('./vakidationConfig')
+const validationConfig = require('./validationConfig')
 const validationFiles = require('./validationFiles')
 
-const arg = process.argv.slice(2);
-
+const newArg = process.argv.slice(2);
+const getArg= (arg = newArg)=>{
 validationArg(arg)
-const config = vakidationConfig(arg)
+const config = validationConfig(arg)
 const {inputFile, outputFile} = validationFiles(arg)
 
 const options = {
@@ -13,5 +13,6 @@ const options = {
     input: inputFile,
     output: outputFile,
 }
-
-module.exports = options
+return options
+}
+module.exports = getArg

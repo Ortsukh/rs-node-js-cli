@@ -16,4 +16,12 @@ expect(cipher(strIn, method, action)).toBe(result);
         const result = 'Gsrh rh hvxivg. Nvhhztv zylfg "_" hbnylo!'
 expect(cipher(strIn, method)).toBe(result);
     })
+    test('check to correct algoritm R0',()=>{
+        const strIn = 'This is secret. Message about "_" symbol!'
+        const method = "R";
+        const action = 0;
+        const result = 'Lak ak kjl. Ekk gml "_" kqegd!'
+expect(cipher(strIn, method, action)).toBe(result);
+    })
+    
 })

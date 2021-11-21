@@ -20,11 +20,7 @@ const cipher = (text, method, mode = ENCRYPTION) => {
 
         let shiftedIndex = (index + +shift) % alphabet.length;
 
-        if (shiftedIndex < 0) {
-          shiftedIndex += alphabet.length;
-        }
-
-        let image = alphabet[shiftedIndex];
+                let image = alphabet[shiftedIndex];
         if (method == "A") image = alphabet[alphabet.length - 1 - index];
 
         if (!isLowerCase) {

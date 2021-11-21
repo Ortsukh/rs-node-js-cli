@@ -1,11 +1,11 @@
 const validationFiles = require('../validationFiles')
+const path = require("path");
 
 
 describe('Validation input and output files', function() {
     test('check to correct files',()=>{
-
         const arr = ['-c', 'C1-C1-R0', '-i', './input.txt', '-o', './output.txt']
-        const result = {"inputFile": "./input.txt", "outputFile": "./output.txt"}
+        const result = {"inputFile": path.join(__dirname.slice(0,-5),"./input.txt"), "outputFile": path.join(__dirname.slice(0,-5),"./output.txt")}
 expect(validationFiles(arr)).toEqual(result);
     })
     test('Сheck for input file existence',()=>{
