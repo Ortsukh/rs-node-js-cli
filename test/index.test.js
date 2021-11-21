@@ -88,6 +88,29 @@ describe("test with scenarios", function () {
       }
     });
   });
+  test("Error scenario 6: Input: User passes correct sequence of symbols as argument for --config that matches regular expression; Result: test passed", (done) => {
+    const example = 'a'
+    const tempIn = fs.readFileSync(pathToInput, 'utf-8')
+    const tempOut = fs.readFileSync(pathToOutput, 'utf-8')
+     fs.writeFileSync(pathToInput, example)
+     const childProcess = child_process.exec(
+      'node index --config "R0-R1-C0-C1-A" -i "./input.txt" -o "./output.txt" '
+    );
+    const result = 'z'
+    childProcess.stdout.on("end", (data) => {
+      try {
+        const outputFile = fs.readFileSync(pathToOutput, 'utf-8')
+        expect(outputFile.slice(-example.length)).toEqual(
+            result
+        );
+        fs.writeFileSync(pathToInput, tempIn)
+        fs.writeFileSync(pathToOutput, tempOut)
+        done();
+      } catch (err) {
+        done(err);
+      }
+    });
+  });
   test("Error scenario 7.2: take cipher usage scenarios from first task description usage examples.", (done) => {
 const example = 'This is secret. Message about "_" symbol!'
    const tempIn = fs.readFileSync(pathToInput, 'utf-8')

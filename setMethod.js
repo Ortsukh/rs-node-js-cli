@@ -4,7 +4,7 @@ const { rule } = getArg();
 const setMethod = rule
   .split("-")
   .map((config) => new TransformTextStream(config));
-console.log();
+
 module.exports = {
   setMethod,
 };
