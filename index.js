@@ -1,11 +1,9 @@
 const fs = require("fs");
-const path = require("path");
 const { setMethod } = require("./setMethod");
 const { pipeline } = require("stream");
 
 const getArg = require("./getArg");
 const { rule, input, output } = getArg();
-console.log(path.join(__dirname, input));
 const readStream = input
   ? fs.createReadStream(input)
   : process.stdin;

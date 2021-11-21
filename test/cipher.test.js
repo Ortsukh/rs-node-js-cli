@@ -20,7 +20,7 @@ expect(cipher(strIn, method)).toBe(result);
         const strIn = 'This is secret. Message about "_" symbol!'
         const method = "R";
         const action = 0;
-        const result = 'Lak ak kjl. Ekk gml "_" kqegd!'
+        const result = 'Lzak ak kwujwl. Ewkksyw stgml "_" kqetgd!'
 expect(cipher(strIn, method, action)).toBe(result);
     })
     
