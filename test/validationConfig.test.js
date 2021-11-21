@@ -17,15 +17,3 @@ expect(console.log.mock.calls[0][0]).toBe(result)
 expect(mockExit).toHaveBeenCalledWith(1)
   });
 })
-//   test("When no product name, it throws error 400", () => {
-//     const mockExit = jest.spyOn(process, 'exit').mockImplementation(() => {});
-//     const arr = ['-c', 'C1-C1-R0-V', '-i', './input.txt', '-o', './output.txt']
-//     const t = () => {
-//         vakidationConfig(arr);
-//       };
-//       expect(t).toThrow(CustomError);
-//       expect(t).toThrow("wrong config");
-
-// // expect(mockExit).toHaveBeenCalledWith(1);
-    
-// })
